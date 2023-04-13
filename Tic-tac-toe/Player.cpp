@@ -1,19 +1,29 @@
 #include "Player.h"
 
-int Player::NumberOfWins = 0;
+Player::Player()
+{
+}
 
 Player::Player(const std::string name, const char sym) {
 	this->name = name;
 	this->sym = sym;
 }
 
-char Player::getSym()
+const char Player::getSym() const
 {
 	return sym;
 }
 
-std::string Player::getName()
+const std::string Player::getName() const
 {
 	return name;
+}
+
+const void Player::countOfWins() {
+	counterWins += 1;
+}
+
+const int Player::getCountOfWins() const {
+	return counterWins;
 }
  
