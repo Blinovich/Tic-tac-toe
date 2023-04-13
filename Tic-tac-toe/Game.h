@@ -3,10 +3,14 @@
 #include <iostream>
 #include <vector>
 
-class Game : public Player {
+class Game : protected Player {
 public:
-	void showField();
+	const void showField();
+	bool play(const Player player);
+	bool findWinner(const char sym);
+	bool changeField(const int cell, const char sym);
+
 private:
-	std::vector <char> field = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+	static std::vector <char> field;
 };
 
